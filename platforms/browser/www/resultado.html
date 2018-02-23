@@ -1,0 +1,101 @@
+<!--
+	Proyecto: Calculadora de créditos
+	Archivo: Página de resultado
+	Autor: Giovany Arana Loaiza - garanal78@gmail.com
+	Fecha inicio: 2018-02-18
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script type="text/javascript" src="scripts/scripts.js"></script>		
+        <title>Calculadora de créditos</title>
+    </head>
+    <body>
+		<header>
+			<table id="cabecera">
+				<tr>
+					<td>¿Cuánto pagaría?</td>
+				</tr>
+			</table>
+        </header>
+        <script type="text/javascript">calcular();</script>
+        <section id="Formulario" class="Marco_Principal">
+        	<table>
+        		<tr>
+        			<th>Resultado</th>
+        		</tr>
+        		<tr>
+        			<td>&nbsp;</td>
+        		</tr>
+        		<tr>
+        			<td>
+        				Valor del crédito:
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align="right">
+        				$ <script>document.write(valor);</script>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td></td>
+        		</tr>
+        		<tr>
+        			<td>
+        				Cantidad de cuotas:
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align="right">
+        				<script>document.write(cuotas);</script>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td></td>
+        		</tr>
+        		<tr>
+        			<td>
+        				Tasa de interés mensual:
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align="right">
+        				<script>document.write(tasa);</script> %
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>
+        				Intereses generados:
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align="right">
+        				$ <script>document.write(interes.toFixed(2));</script>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>
+        				Valor total a pagar:
+        			</td>
+        		</tr>
+        		<tr>
+        			<td align="right">
+        				$ <script>document.write(valorTotal.toFixed(2));</script>
+        			</td>
+        		</tr>
+        		<tr>
+        			<td>&nbsp;</td>
+        		</tr>
+        		<tr>
+					<td align="center">
+						<input type="button" value="Regresar" onClick="regresar();">
+					</td>
+        		</tr>
+        	</table>
+        </section>
+    </body>
+</html>
