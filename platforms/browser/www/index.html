@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script type="text/javascript" src="scripts/scripts.js"></script>
-        <title>¿Cuánto pagaría?</title>
+        <title>¿Cuánto pagarías?</title>
     </head>
     <body>
 		<header>
@@ -24,10 +24,10 @@
         </header>
 		<table id="Formulario">
 			<tr>
-				<th colspan="2">Ingresa los siguientes datos:</th>
+				<td colspan="2"><div id="texto1">Averigüemos cuando pagarías por comprar con una tarjeta de crédito.</div></td>	
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
+				<th colspan="2"><div id="texto2">Ingresa los siguientes datos:</div></th>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -35,12 +35,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="right">
-					$ <input type="number" name="valor_credito" id="valor_credito" class="w3-input">
+				<td colspan="2" align="right" class="resultado">
+					$ <input type="number" name="valor_credito" id="valor_credito">
 				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -48,12 +45,9 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="right">
+				<td colspan="2" align="right" class="resultado">
 					<input type="number" name="cantidad_cuotas" id="cantidad_cuotas" size="3" min="1" max="999">
 				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -61,13 +55,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="right">
+				<td colspan="2" align="right" class="resultado">
 					<input type="number" name="tasa_interes" id="tasa_interes" step="0.01" maxlenght="5"> %
 				</td>
 			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
+			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td align="center">
 					<input type="button" value="Limpiar" onClick="limpiar();">

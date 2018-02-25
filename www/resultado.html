@@ -18,7 +18,7 @@
 		<header>
 			<table id="cabecera">
 				<tr>
-					<td>¿Cuánto pagaría?</td>
+					<td>¿Cuánto pagarías?</td>
 				</tr>
 			</table>
         </header>
@@ -33,16 +33,13 @@
         		</tr>
         		<tr>
         			<td>
-        				Valor del crédito:
+        				Valor de la compra:
         			</td>
         		</tr>
         		<tr>
-        			<td align="right">
-        				$ <script>document.write(valor);</script>
+        			<td class="resultado">
+        				$ <script>document.write(formatearMiles(valor));</script>
         			</td>
-        		</tr>
-        		<tr>
-        			<td></td>
         		</tr>
         		<tr>
         			<td>
@@ -50,12 +47,9 @@
         			</td>
         		</tr>
         		<tr>
-        			<td align="right">
+        			<td class="resultado">
         				<script>document.write(cuotas);</script>
         			</td>
-        		</tr>
-        		<tr>
-        			<td></td>
         		</tr>
         		<tr>
         			<td>
@@ -63,33 +57,42 @@
         			</td>
         		</tr>
         		<tr>
-        			<td align="right">
+        			<td class="resultado">
         				<script>document.write(tasa);</script> %
         			</td>
         		</tr>
         		<tr>
-        			<td>
-        				Intereses generados:
-        			</td>
-        		</tr>
+        			<td class="totales">
+        				<table id="tabla_interes">
+							<tr>
+								<td>
+									En intereses pagarás:
+								</td>
+							</tr>
+							<tr>
+								<td class="total_a_pagar">
+									$ <script>document.write(formatearMiles(interes));</script>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
         		<tr>
-        			<td align="right">
-        				$ <script>document.write(interes.toFixed(2));</script>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td>
-        				Valor total a pagar:
-        			</td>
-        		</tr>
-        		<tr>
-        			<td align="right">
-        				$ <script>document.write(valorTotal.toFixed(2));</script>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td>&nbsp;</td>
-        		</tr>
+        			<td class="totales">
+        				<table id="tabla_total">
+							<tr>
+								<td>
+									En total pagarás:
+								</td>
+							</tr>
+							<tr>
+								<td class="total_a_pagar">
+									$ <script>document.write(formatearMiles(valorTotal));</script>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
         		<tr>
 					<td align="center">
 						<input type="button" value="Regresar" onClick="regresar();">
