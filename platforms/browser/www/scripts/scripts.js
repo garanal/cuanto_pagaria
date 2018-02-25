@@ -76,3 +76,47 @@ function regresar() {
 	window.history.back();
 }
 
+function formatearMiles(numero) {
+	
+	var numTexto = numero.toString();
+	//document.write("numTexto = " + numTexto + "<br>");	 
+	var decimales = "";
+	var numFinal = "";
+	
+	// Busca el punto decimal en el texto
+	var ubicacionPunto = numTexto.indexOf(".");
+	
+	// Si hay punto decimal guarda dos decimales y deja solo la parte entera
+	if (ubicacionPunto >= 0) {
+		decimales = numTexto.substr(ubicacionPunto, 3);
+		numTexto = numTexto.substring(0, ubicacionPunto);
+	} else {
+		decimales = ".00";
+	}
+	
+	//document.write("numTexto = " + numTexto + "<br>");	 
+	
+	var longNumero = numTexto.length;
+	
+	// Si la parte entera tiene menos de tres cifras retorna el número adicionando
+	// los decimales si los hay.
+	if (longNumero <= 3) {
+		return numTexto + decimales;
+	}
+	
+	// Da formato al número con separadores de miles
+	do {
+		numFinal = "," + numTexto.substr(longNumero - 3, 3) + numFinal;
+		longNumero -= 3;
+	} while (longNumero >= 3);	
+	
+	// Si quedo parte del número lo adiciona. Si no, quita la coma que quedó al inicio
+	if (longNumero > 0) {
+		numFinal = numTexto.substr(0, longNumero) + numFinal;
+	} else {
+		numFinal = numFinal.substring(1, numFinal.length);
+	}
+	
+	return numFinal + decimales;
+
+}
