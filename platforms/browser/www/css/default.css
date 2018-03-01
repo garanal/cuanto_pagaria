@@ -12,6 +12,7 @@ html, body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 10pt;
 	overflow-y: hidden;
+	background-color: #2196f3;
 }
 
 header {
@@ -29,9 +30,10 @@ header {
 }
 
 
-#Formulario {
+.principal {
 	margin-top: 5rem;
 	font-size: 1.5rem;
+	width: 90%;
 }
 
 .Titulo {
@@ -39,14 +41,16 @@ header {
 }
 
 table {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 }
 
 .resultado {
 	text-align: right;
+	/*
 	border-bottom-style: solid;
 	border-bottom-width: thin;
+	*/
 }
 
 #texto1 {
@@ -64,13 +68,13 @@ table {
 }
 
 #tabla_interes {
-	background-color: orange;
+	background-color: #c43c00;
 	color: black;
 	width: 100%;
 }
 
 #tabla_total {
-	background-color: red;
+	background-color: #9b0000;
 	color: white;
 	width: 100%;
 }
@@ -85,6 +89,7 @@ input[type=number] {
 	border: none;
 	border-bottom: 2px solid gray;
 	text-align: right;
+	background-color: #6ec6ff;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -106,4 +111,8 @@ input[type=button], input[type=submit], input[type=reset] {
 
 #valor_credito {
 	width: 10rem;
+}
+
+.icono {
+	width: 4rem;
 }
