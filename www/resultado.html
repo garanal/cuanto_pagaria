@@ -10,6 +10,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/animation.css" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script type="text/javascript" src="scripts/scripts.js"></script>		
         <title>Calculadora de créditos</title>
@@ -24,47 +25,81 @@
         </header>
         <script type="text/javascript">calcular();</script>
         <section id="Formulario" class="Marco_Principal">
-        	<table>
+        	<table class="principal">
         		<tr>
         			<th>Resultado</th>
         		</tr>
         		<tr>
-        			<td>&nbsp;</td>
-        		</tr>
-        		<tr>
         			<td>
-        				Valor de la compra:
-        			</td>
-        		</tr>
-        		<tr>
-        			<td class="resultado">
-        				$ <script>document.write(formatearMiles(valor));</script>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td>
-        				Cantidad de cuotas:
-        			</td>
-        		</tr>
-        		<tr>
-        			<td class="resultado">
-        				<script>document.write(cuotas);</script>
+        				<article class="box1">
+        					<table>
+        						<tr>
+									<td rowspan="2">
+										<img src="images/moneda-negro.svg" class="icono">
+									</td>
+        							<td>
+										Valor de la compra:
+									</td>
+								</tr>
+								<tr>
+									<td class="resultado">
+										$ <script>document.write(formatearMiles(valor));</script>
+        							</td>
+        						</tr>
+        					</table>
+        				</article>
         			</td>
         		</tr>
         		<tr>
         			<td>
-        				Tasa de interés mensual:
+        				<article class="box2">
+        					<table>
+        						<tr>
+									<td rowspan="2">
+										<img src="images/calendar-negro.svg" class="icono">
+									</td>
+        							<td>
+										Cantidad de cuotas:
+									</td>
+								</tr>
+								<tr>
+									<td class="resultado">
+										<script>document.write(cuotas);</script>
+        							</td>
+        						</tr>
+        					</table>
+        				</article>
         			</td>
         		</tr>
         		<tr>
-        			<td class="resultado">
-        				<script>document.write(tasa);</script> %
+        			<td>
+        				<article class="box1">
+        					<table>
+        						<tr>
+									<td rowspan="2">
+										<img src="images/intereses-negro.svg" class="icono">
+									</td>
+        							<td>
+										Tasa de interés mensual:
+									</td>
+								</tr>
+								<tr>
+									<td class="resultado">
+										<script>document.write(tasa);</script> %
+        							</td>
+        						</tr>
+        					</table>
+        				</article>
         			</td>
         		</tr>
         		<tr>
         			<td class="totales">
+        			<article class="box2">
         				<table id="tabla_interes">
 							<tr>
+								<td rowspan="2">
+									<img src="images/pila-monedas-negro.svg" class="icono">
+								</td>
 								<td>
 									En intereses pagarás:
 								</td>
@@ -75,12 +110,17 @@
 								</td>
 							</tr>
 						</table>
+					</article>
 					</td>
 				</tr>
         		<tr>
         			<td class="totales">
+        			<article class="box1">
         				<table id="tabla_total">
 							<tr>
+								<td rowspan="2">
+									<img src="images/bolsa-dinero-blanco.svg" class="icono">
+								</td>
 								<td>
 									En total pagarás:
 								</td>
@@ -91,11 +131,12 @@
 								</td>
 							</tr>
 						</table>
+					</article>
 					</td>
 				</tr>
         		<tr>
 					<td align="center">
-						<input type="button" value="Regresar" onClick="regresar();">
+						<input type="button" value="Regresar" onClick="regresar();" class="box3">
 					</td>
         		</tr>
         	</table>

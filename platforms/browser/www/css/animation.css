@@ -1,0 +1,56 @@
+.box1 {
+	  width: 100%;
+/*	  box-shadow: 0 10px 20px rgba(0,0,0,0.5); */
+  animation-duration: 2s;
+  animation-name: slideToLeft;
+}
+
+.box2 {
+	  width: 100%;
+/*	  box-shadow: 0 10px 20px rgba(0,0,0,0.5); */
+  animation-duration: 2s;
+  animation-name: slideToRight;
+}
+
+.box3 {
+	  width: 100%;
+/*	  box-shadow: 0 10px 20px rgba(0,0,0,0.5); */
+  animation-duration: 2s;
+  animation-name: slideToTop;
+}
+
+@keyframes slideToLeft {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideToRight {
+  from {
+    margin-left: -100%;
+    width: -300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideToTop {
+  from {
+    margin-top: 50%;
+    height: -50%
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}

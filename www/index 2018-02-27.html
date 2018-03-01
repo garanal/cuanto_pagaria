@@ -1,0 +1,73 @@
+<!--
+	Proyecto: Calculadora de créditos
+	Archivo: Página inicial
+	Autor: Giovany Arana Loaiza - garanal78@gmail.com
+	Fecha inicio: 2018-02-18
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script type="text/javascript" src="scripts/scripts.js"></script>
+        <title>¿Cuánto pagarías?</title>
+    </head>
+    <body>
+		<header>
+			<table id="cabecera">
+				<tr>
+					<td>¿Cuánto pagaría?</td>
+				</tr>
+			</table>
+        </header>
+		<table id="Formulario">
+			<tr>
+				<td colspan="2"><div id="texto1">Averigüemos cuando pagarías por comprar con una tarjeta de crédito.</div></td>	
+			</tr>
+			<tr>
+				<th colspan="2"><div id="texto2">Ingresa los siguientes datos:</div></th>
+			</tr>
+			<tr>
+				<td colspan="2">
+					Valor de la compra:
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right" class="resultado">
+					$ <input type="number" name="valor_credito" id="valor_credito">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					Cantidad de cuotas:
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right" class="resultado">
+					<input type="number" name="cantidad_cuotas" id="cantidad_cuotas" size="3" min="1" max="999">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					Tasa de interés mensual:
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right" class="resultado">
+					<input type="number" name="tasa_interes" id="tasa_interes" step="0.01" maxlenght="5"> %
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td align="center">
+					<input type="button" value="Limpiar" onClick="limpiar();">
+				</td>
+				<td align="center">
+					<input type="button" value="Calcular" onClick="revisar();">
+				</td>
+			</tr>
+		</table>
+    </body>
+</html>
