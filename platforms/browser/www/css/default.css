@@ -84,7 +84,7 @@ table {
 	font-weight: bold;
 }
 
-input[type=number] {
+input[type=number], input[type=tel] {
 	font-size: 1.5rem;
 	border: none;
 	border-bottom: 2px solid gray;

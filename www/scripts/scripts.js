@@ -11,9 +11,21 @@ function revisar() {
   tasa = document.getElementById("tasa_interes").value;
   
   // Valida los valores del formulario
-  if (!validar(valor, "el valor del crédito")) return;
-  if (!validar(cuotas, "el número de cuotas")) return;  
-  if (!validar(tasa, "la tasa de interés")) return;  
+  if (!validarCampo(valor, "el valor del crédito")) return;
+  if (!validarCampo(cuotas, "el número de cuotas")) return;  
+  if (!validarCampo(tasa, "la tasa de interés")) return;    
+  if (cuotas == 1) {
+  	window.alert("Las compras a una sola cuota no generan intereses");
+  	return;
+  }
+  
+  // Quita los separadores del valor
+  var posSeparador = valor.indexOf(",");
+  while (posSeparador >= 0) {
+	valor = valor.replace(",","");
+	posSeparador = valor.indexOf(",");
+  }
+  
   
   // Arma el URL de la página resultado con las variables
   pagina = "resultado.html?";
@@ -27,12 +39,91 @@ function revisar() {
 }
 
 // Valida que dato no esté vacío ni valga 0
-function validar(dato, nombre) {
+function validarCampo(dato, nombre) {
   if (dato.trim() == "" || parseInt(dato) == 0) {
   	window.alert("Debes ingresar " + nombre);
   	return false;
   }
   return true;
+}
+
+/*
+// Fecha: Marzo de 2018
+// Autor: Giovany Arana Loaiza
+// Correo: garanal78@gmail.com
+//
+// Función que toma un número y le da formato insertando en tiempo real 
+// cifras cada tres cifras separadores cada tres cifras. Se creó pensando
+// en dar formato a campos numéricos en formularios web para que se vea
+// el formato del número mientras el usuario digita en el y de esa manera
+// se más fácil leer el valor.
+//
+// Es importante tener en cuenta que para usar el número, luego de que el
+// haya terminado de ingresarlo, deben quitarse los separadores convertir
+// la cadena en un valor numérico.
+// 
+// La función toma dos parámetros:
+// 	- valor: Es el número al que se le desea dar formato.
+//	- longMaxima: Es la longitud máxima que se desea tener incluyendo
+//    dígitos y separadores. Usando 0 se omite este límite.
+*/
+function formatearValor(valor, longMaxima) {
+
+	var longValor = valor.length;
+	
+	// Valida la longitud máxima del número incluyendo los separadores.
+	// Si el parámetro longMaxima es igual a cero se omite la validación.
+	if (longMaxima > 0) {
+		if (longValor > longMaxima) {
+			window.alert("El valor es demasiado alto.");
+			return valor.substring(0, valor.length - 1);
+		}			
+	}
+	
+	// Retira los separadores que tenga el número tomado del formulario.
+	var posSeparador = valor.indexOf(",");
+	while (posSeparador >= 0) {
+		valor = valor.replace(",","");
+		posSeparador = valor.indexOf(",");
+	}
+	
+	// Se toma nuevamente la longitud, luego de quitar los separadores
+	longValor = valor.length;
+	
+	// No hace nada si el número es menor o igual a tres dígitos
+	if (longValor <= 3) return valor;
+	
+	// Se calculan los grupos de tres cifras que tiene el número
+	var gruposDeTres = Math.trunc(longValor / 3);
+	if (((longValor / 3) - gruposDeTres) > 0) gruposDeTres++;
+	
+	// Pone los separadores al número
+	var separadores = 0;
+	var posicion = -1;
+	while (separadores < gruposDeTres - 1) {
+		posicion += 4;
+		valor = valor.substring(0, valor.length - posicion) 
+			+ "," 
+			+ valor.substring(valor.length - posicion, valor.length)
+		separadores++;
+	};
+	
+	// Si no hay que aplicar más separadores termina la función
+	return valor;
+}
+
+// Esta función toma el número del campo de entrada en el formulario
+// y lo remplaza por el número con separadores utilizando la función
+// formatearValor()
+function darFormato() {
+	// Se toma el número desde el formulario
+	var numSinFormato = document.getElementById("valor_credito").value;
+	// Se valida que el valor no sea nulo ni vacío
+	if (numSinFormato == null || numSinFormato == "") return;
+	// Se da formato al número
+	var numConFormato = formatearValor(numSinFormato, 15);
+	// Se regresa el número al formulario, ya con separadores
+	document.getElementById("valor_credito").value = numConFormato;
 }
 
 function tomarValores() {
