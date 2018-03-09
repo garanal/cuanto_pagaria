@@ -44,7 +44,12 @@
 							</tr>
 							<tr>
 								<td align="right" class="resultado">
-									$ <input type="number" name="valor_credito" id="valor_credito">
+									<!-- 
+										LA combinación de los atributos type, pattern 
+										y novalidate permite desplegar el teclado nu-
+										mérico del dispositivo y aceptar los separadores
+									 -->
+									$ <input type="tel" pattern="[0-9]*" novalidate name="valor_credito" id="valor_credito" onKeyUp="darFormato();">
 								</td>
 							</tr>
 						</table>
